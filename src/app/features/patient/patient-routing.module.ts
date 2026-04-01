@@ -9,6 +9,6 @@ export const PATIENT_ROUTES:Route[] = [
     {
         path: 'doctor-list',
         loadComponent: () =>import('./doctor-list/doctor-list.component').then((m)=> m.DoctorListComponent),
-        title: 'Doctor List'
+        title: 'Doctors | CareSync'
     }
 ]

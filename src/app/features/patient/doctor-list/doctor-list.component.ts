@@ -1,10 +1,11 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { PatientService } from '../services/patient.service';
+import { CurrencyPipe } from '@angular/common'; 
 
 @Component({
   selector: 'app-doctor-list',
   standalone: true,
-  imports: [],
+  imports: [CurrencyPipe],
   templateUrl: './doctor-list.component.html',
   styleUrl: './doctor-list.component.scss'
 })
