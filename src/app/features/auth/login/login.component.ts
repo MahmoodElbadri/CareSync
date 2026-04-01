@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit{
     this.authService.login(loginDto).subscribe({
       next: (response) => {
         this.toastr.success('Logged in successfully');
-        this.router.navigate(['/']);
+        this.router.navigate(['/patient']);
       },
       error: (error) => {
         this.toastr.error(error);

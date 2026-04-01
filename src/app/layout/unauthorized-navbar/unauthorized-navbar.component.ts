@@ -22,6 +22,9 @@ export class UnauthorizedNavbarComponent implements OnInit {
   ngOnInit(): void {
     this.isLoggedIn = this.authService.isLoggedIn;
     this.userName = this.authService.userName;
+    if(this.isLoggedIn()){
+      this.router.navigate(['/patient']);
+    }
   }
 
   toggleMobileMenu() {

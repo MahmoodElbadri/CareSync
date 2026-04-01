@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Doctor List</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            @for(doctor of doctors(); track doctor.id){
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{doctor.fullName}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{doctor.specialityName}}</h6>
+                        <p class="card-text">{{doctor.bio}}</p>
+                        <p class="card-text">Consultation Fee: {{doctor.consultationFee}}</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
