@@ -15,11 +15,8 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
       }
     });
   }
-  //in case of token expired
 
-
-  
-  
+  //in case of token expired    
   return next(clonedReq).pipe(
     catchError((err)=>{
       if(err.status === 401){
