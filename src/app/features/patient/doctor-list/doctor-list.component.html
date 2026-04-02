@@ -19,7 +19,7 @@
                             Consultation Fee: ${{ doctor.consultationFee | currency: 'EGP'}}
                         </h6>
                         
-                        <button class="btn btn-outline-primary w-100 fw-bold">
+                        <button class="btn btn-outline-primary w-100 fw-bold" (click)="openModal(doctor)">
                             <i class="bi bi-calendar-check me-2"></i> Book Appointment
                         </button>
                     </div>
@@ -32,3 +32,51 @@
         }
     </div>
 </div>
+
+@if (isModalOpen) {
+  <div class="modal-overlay" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    
+    <!-- Header Section -->
+    <div class="modal-header">
+      <img 
+        src="assets/logo.webp" 
+        class="doctor-avatar" 
+        alt="Doctor"
+      >
+      <button class="close-btn" (click)="closeModal()">×</button>
+    </div>
+
+    <!-- Title -->
+    <h2 class="doctor-name">{{ selectedItem?.fullName }}</h2>
+
+    <!-- Body Section -->
+    <div class="modal-body">
+      <p class="info-row">
+        <span class="label">Price:</span>
+        <span class="value">{{ selectedItem?.consultationFee | currency: 'EGP' }}</span>
+      </p>
+      <p class="info-row">
+        <span class="label">Details:</span>
+        <span class="value">{{ selectedItem?.bio }}</span>
+      </p>
+    </div>
+
+    <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="appointmentDate">Appointment Date</label>
+        <input type="datetime-local" class="form-control" id="appointmentDate" formControlName="appointmentDate">
+      </div>
+      <div class="form-group">
+        <label for="notes">Notes</label>
+        <textarea class="form-control" id="notes" formControlName="notes"></textarea>
+      </div>
+      <div class="modal-footer col-12">
+        <button type="submit" class="btn btn-primary w-100">Book Appointment</button>
+        <!-- <button type="button" class="btn btn-secondary col-6" (click)="closeModal()">Close</button> -->
+      </div>
+    </form>
+
+  </div>
+</div>
+}

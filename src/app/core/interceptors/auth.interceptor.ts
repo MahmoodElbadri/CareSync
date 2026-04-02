@@ -25,7 +25,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
         authService.logout();
         router.navigate(['/login']);
       }
-      return throwError(()=> new Error("You don't have permission to access this resource"));
+      return throwError(()=> new Error(err.error.message));
     })
   )
 };

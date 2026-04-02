@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit{
   private router = inject(Router);
   private fb = inject(FormBuilder);
 
-  //variables
+  //variables`
   loginForm!: FormGroup;
 
   //methods
