@@ -38,8 +38,8 @@ export class PatientService {
     );
   }
 
-  //[HttpGet("get-doctor-appointments")]
-  getDoctorAppointments(doctorId: number){
-    return this.http.get(`${this.apiUrl}Appointments/get-doctor-appointments/${doctorId}`);
-  }
+  // //[HttpGet("get-doctor-appointments")]
+  // getDoctorAppointments(doctorId: number){
+  //   return this.http.get(`${this.apiUrl}Appointments/get-doctor-appointments/${doctorId}`);
+  // }
 }

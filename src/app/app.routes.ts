@@ -17,6 +17,11 @@ export const routes: Routes = [
     loadChildren:()=>import('./features/patient/patient-routing.module').then((m)=>m.PATIENT_ROUTES)
   },
   {
+    path: 'doctor',
+    loadChildren: ()=>import('./features/doctor/doctor-routing.module')
+    .then((m)=>m.DOCTOR_ROUTES),
+  },
+  {
     path: '**', // Wildcard route for any other path
     redirectTo: 'auth',
   },
