@@ -39,7 +39,12 @@ export class LoginComponent implements OnInit{
     this.authService.login(loginDto).subscribe({
       next: (response) => {
         this.toastr.success('Logged in successfully');
-        this.router.navigate(['/patient']);
+        if(this.authService.role() === 'Patient'){
+          this.router.navigate(['/patient']);
+        }
+        else if(this.authService.role() === 'Doctor'){
+          this.router.navigate(['/doctor']);
+        }
       },
       error: (error) => {
         this.toastr.error(error);

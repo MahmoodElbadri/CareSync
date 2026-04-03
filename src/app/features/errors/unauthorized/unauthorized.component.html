@@ -1,0 +1,22 @@
+<div class="unauthorized-container">
+    <div class="error-card">
+        <div class="error-icon">
+            <i class="bi bi-shield-lock"></i>
+        </div>
+        <h1 class="error-code">403</h1>
+        <h2 class="error-title">Access Denied</h2>
+        <p class="error-message">
+            You don't have permission to access this page.
+        </p>
+        <div class="error-actions">
+            <button class="btn-primary" (click)="goToHome()">
+                <i class="bi bi-house-door"></i>
+                Go Home
+            </button>
+            <button class="btn-secondary" (click)="logout()">
+                <i class="bi bi-box-arrow-right"></i>
+                Logout
+            </button>
+        </div>
+    </div>
+</div>
