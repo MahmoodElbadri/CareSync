@@ -21,5 +21,15 @@ export class DoctorService {
   getDoctorAppointment(){
     return this.http.get<DoctorAppointmentDto[]>(`${this.apiUrl}Doctors/get-doctor-appointments`);
   }
+
+  // [HttpPut("change-appointment-status/{id}")]
+  //DoctorsController
+  //public async Task<IActionResult> ChangeAppointmentStatus(int id, [FromBody] string status)
+  changeAppointmentStatus(id: number, status: string){
+    return this.http.put(`${this.apiUrl}Doctors/change-appointment-status/${id}`,
+      JSON.stringify({status}),
+      {headers: {'Content-Type': 'application/json'}}
+    );
+  }
   
 }
