@@ -23,6 +23,14 @@ export class RegisterComponent {
 
   //methods
   ngOnInit(): void {
+    if(this.authService.isLoggedIn()){
+      if(this.authService.role() === 'Patient'){
+        this.router.navigate(['/patient']);
+      }
+      else if(this.authService.role() === 'Doctor'){
+        this.router.navigate(['/doctor']);
+      }
+    }
     this.initializeRegisterForm();
   }
 

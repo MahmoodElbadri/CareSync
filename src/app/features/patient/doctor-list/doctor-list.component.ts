@@ -5,6 +5,7 @@ import { DoctorReadDto } from '../models/doctor-read-dto';
 import { ReservationCreateDto } from '../models/reservation-create-dto';
 import { Toast, ToastrService } from 'ngx-toastr';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { DoctorParameters } from '../models/doctor-parameters';
 
 @Component({
   selector: 'app-doctor-list',
@@ -24,10 +25,31 @@ export class DoctorListComponent implements OnInit {
   protected isModalOpen = false;
   protected selectedItem: DoctorReadDto | null = null;
   protected reservationForm!: FormGroup;
+  protected searchForm!: FormGroup;
+  /*
+   new Speciality { Id = 1, Name = "Cardiology" },      // أمراض القلب
+ new Speciality { Id = 2, Name = "Dermatology" },     // الجلدية
+ new Speciality { Id = 3, Name = "Pediatrics" },      // طب الأطفال
+ new Speciality { Id = 4, Name = "Orthopedics" },     // جراحة العظام
+ new Speciality { Id = 5, Name = "Neurology" },       // المخ والأعصاب
+ new Speciality { Id = 6, Name = "Ophthalmology" },   // طب العيون
+ new Speciality { Id = 7, Name = "Dentistry" },       // طب الأسنان
+ new Speciality { Id = 8, Name = "Psychiatry" },      // الطب النفسي
+ new Speciality { Id = 9, Name = "Internal Medicine"} // الباطنة*/
+  protected specialities: string[] =
+   ['Cardiology', 'Dermatology', 'Pediatrics', 'Orthopedics', 'Neurology', 'Ophthalmology', 'Dentistry', 'Psychiatry', 'Internal Medicine'];
 
   //methods
   ngOnInit(): void {
     this.patientService.getAllDoctors();
+    // this.initializeSearchForm();
+  }
+
+  initializeSearchForm(){
+    this.searchForm = this.fb.group({
+      search: [''],
+      specialityName: ['']
+    })
   }
 
   initializeBookingForm(){
@@ -66,7 +88,24 @@ export class DoctorListComponent implements OnInit {
     })
   }
 
-  getDoctorAppointments(doctorId: number){
-    
+  filterBySpeciality(speciality: string){
+    let docParams: DoctorParameters = {
+      search: '',
+      specialityName: speciality
+    }
+    this.patientService.getAllDoctors(docParams);
+  }
+
+  searchDoctors(){
+    let docParams: DoctorParameters = {
+      search: this.searchForm.value.search,
+      specialityName: this.searchForm.value.specialityName
+    }
+    this.patientService.getAllDoctors(docParams);
+  }
+
+  resetSearch(){
+    this.searchForm.reset();
+    this.patientService.getAllDoctors();
   }
 }
