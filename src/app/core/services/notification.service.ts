@@ -29,9 +29,9 @@ export class NotificationService {
       console.error('Error connecting to notification hub:', err);
     });
 
-    this.hubConnection.on('ReceiveNewAppoitment',(message: string)=>{
-      console.log('Notification received:', message);
-      this.incomingNotification.set(message);
+    this.hubConnection.on('ReceiveNewAppoitment',(notification: NotificationDto)=>{
+      console.log('Notification received:', notification);
+      this.incomingNotification.set(notification.message);
     })
 
     // this.hubConnection.stop().then(()=>{
@@ -41,3 +41,14 @@ export class NotificationService {
     // })
   }
 }
+
+export interface NotificationDto{
+  title: string;
+  message: string;
+  receiverId: string;
+  type: string;
+}
+/*public string Title { get; set; } = string.Empty;
+public string Message { get; set; } = string.Empty;
+public string ReceiverId { get; set; } = string.Empty;
+public string Type  { get; set; } = "Booking";*/
