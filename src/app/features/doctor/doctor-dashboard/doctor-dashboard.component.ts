@@ -4,11 +4,12 @@ import { DoctorAppointmentDto } from '../models/doctor-appointment-dto';
 import { JsonPipe, TitleCasePipe, DatePipe } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import { NotificationService } from '../../../core/services/notification.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-doctor-dashboard',
   standalone: true,
-  imports: [JsonPipe, TitleCasePipe, DatePipe],
+  imports: [JsonPipe, TitleCasePipe, DatePipe, TranslateModule],
   templateUrl: './doctor-dashboard.component.html',
   styleUrl: './doctor-dashboard.component.scss'
 })

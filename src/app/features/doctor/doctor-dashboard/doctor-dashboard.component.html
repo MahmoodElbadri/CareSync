@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1>Doctor Dashboard</h1>
+            <h1>{{'DOCTOR.DASHBOARD' | translate}}</h1>
         </div>
     </div>
     <div class="row">
@@ -10,12 +10,12 @@
             <table class="table table-striped table-bordered text-center text-black">
                 <thead style="background: var(--gray-900); color: white; border-bottom: 2px solid black;">
                     <tr>
-                        <th>Appointment ID</th>
-                        <th>Patient Name</th>
-                        <th>Appointment Date</th>
-                        <th>Notes</th>
-                        <th>Status</th>
-                        <th>Actions</th>
+                        <th>{{'DOCTOR.APPOINTMENT_ID' | translate}}</th>
+                        <th>{{'DOCTOR.PATIENT_NAME' | translate}}</th>
+                        <th>{{'DOCTOR.APPOINTMENT_DATE' | translate}}</th>
+                        <th>{{'DOCTOR.NOTES' | translate}}</th>
+                        <th>{{'DOCTOR.STATUS' | translate}}</th>
+                        <th>{{'DOCTOR.ACTIONS' | translate}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,20 +28,21 @@
                         <td>{{app.notes}}</td>
                         <td>
                             <span class="badge"
+                            
                             [class.bg-primary]="app.status.toLowerCase() === 'pending'"
                             [class.bg-success]="app.status.toLowerCase() === 'confirmed'"
                             [class.bg-warning]="app.status.toLowerCase() === 'completed'"
                             [class.bg-danger]="app.status.toLowerCase() === 'cancelled'"
-                            >{{app.status | titlecase}}</span>
+                            >{{'DOCTOR.' + app.status.toUpperCase() | translate}}</span>
                         </td>
                         <td>
                             <select #statusSelect class="form-select"
                                 [value]="app.status.toLowerCase()" 
                                 (change)="changeAppointmentStatus(app.appointmentId, statusSelect.value)">
-                                <option value="pending" disabled>Pending</option>
-                                <option value="confirmed">Confirmed</option>
-                                <option value="completed">Completed</option>
-                                <option value="cancelled">Cancelled</option>
+                                <option value="pending" disabled>{{'DOCTOR.PENDING' | translate}}</option>
+                                <option value="confirmed">{{'DOCTOR.CONFIRMED' | translate}}</option>
+                                <option value="completed">{{'DOCTOR.COMPLETED' | translate}}</option>
+                                <option value="cancelled">{{'DOCTOR.CANCELLED' | translate}}</option>
                             </select>
                         </td>
                     </tr>

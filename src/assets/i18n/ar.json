@@ -2,11 +2,27 @@
     "NAVBAR":{
         "LOGIN":"تسجيل الدخول",
         "REGISTER":"تسجيل",
-        "LOGOUT":"تسجيل الخروج"
+        "LOGOUT":"تسجيل الخروج",
+        "CARE_SYNC": "الاعمار بيد الله",
+        "WELCOME": "مرحبا"
     },
     "PATIENT":{
     "TITLE":    "أفضل الأطباء تقييماً لدينا",
     "SEARCH_PLACEHOLDER": "ابحث باسم الدكتور"
+    },
+    "DOCTOR":{
+        "DASHBOARD":"لوحة التحكم",
+        "APPOINTMENT_ID":"رقم الموعد",
+        "PATIENT_NAME":"اسم المريض",
+        "APPOINTMENT_DATE":"تاريخ الموعد",
+        "NOTES":"ملاحظات",
+        "STATUS":"الحالة",
+        "ACTIONS":"الإجراءات",
+        "PENDING":"قيد الانتظار",
+        "CONFIRMED":"تم التأكيد",
+        "COMPLETED":"تم الانتهاء",
+        "CANCELLED":"تم الإلغاء",
+        "NO_APPOINTMENTS":"لا توجد مواعيد"
     },
     "LOGINPAGE":{
         "TITLE":"مرحبا بكم في عيادتنا",

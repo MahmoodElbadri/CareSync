@@ -2,11 +2,28 @@
     "NAVBAR":{
         "LOGIN":"Login",
         "REGISTER":"Register",
-        "LOGOUT":"Logout"
+        "LOGOUT":"Logout",
+        "CARE_SYNC": "CareSync",
+        "WELCOME": "Welcome"
     },
     "PATIENT":{
     "TITLE":    "Our TOP Rated Doctors",
     "SEARCH_PLACEHOLDER": "Seaarch By Dr. Name"
+    },
+    "DOCTOR":{
+        "DASHBOARD":"Dashboard",
+        "DOCTOR_DASHBOARD":"Doctor Dashboard",
+        "APPOINTMENT_ID":"Appointment ID",
+        "PATIENT_NAME":"Patient Name",
+        "APPOINTMENT_DATE":"Appointment Date",
+        "NOTES":"Notes",
+        "STATUS":"Status",
+        "ACTIONS":"Actions",
+        "PENDING":"Pending",
+        "CONFIRMED":"Confirmed",
+        "COMPLETED":"Completed",
+        "CANCELLED":"Cancelled",
+        "NO_APPOINTMENTS":"No Appointments Found"
     },
     "LOGINPAGE":{
         "TITLE":"Welcome To Our Clinic",
@@ -15,7 +32,5 @@
         "PASSWORD":"Password",
         "LOGIN":"Login",
         "REGISTER":"Don't have an account? Register Now"
-        
     }
-
 }
